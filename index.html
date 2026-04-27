@@ -13,7 +13,6 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 font-family: 'Montserrat', sans-serif;
-scroll-behavior: smooth;
 }
 
 body {
@@ -21,22 +20,16 @@ background: #0f0f0f;
 color: #fff;
 }
 
-/* CONTAINER */
-.container {
-max-width: 1100px;
-margin: auto;
-}
-
-/* NAVBAR */
+/* NAV */
 nav {
 position: fixed;
-width: 100%;
 top: 0;
-background: rgba(0,0,0,0.7);
-backdrop-filter: blur(10px);
+width: 100%;
 display: flex;
 justify-content: space-between;
-padding: 15px 30px;
+padding: 20px 60px;
+background: rgba(0,0,0,0.6);
+backdrop-filter: blur(10px);
 z-index: 1000;
 }
 
@@ -46,7 +39,7 @@ color: #ff2e2e;
 
 nav a {
 color: white;
-margin-left: 15px;
+margin-left: 20px;
 text-decoration: none;
 font-weight: 600;
 }
@@ -54,29 +47,29 @@ font-weight: 600;
 /* HERO */
 .hero {
 height: 100vh;
-background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-padding: 0 20px;
+padding: 20px;
+background:
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
 }
 
 .hero h1 {
-font-size: 3.5rem;
+font-size: 4rem;
 color: #ff2e2e;
 }
 
 .hero p {
-margin: 10px 0;
+margin: 15px 0;
 font-size: 1.2rem;
 }
 
-/* BUTTONS */
 .btn {
-padding: 12px 22px;
+padding: 12px 25px;
 margin: 10px;
 border-radius: 25px;
 text-decoration: none;
@@ -93,78 +86,75 @@ background: white;
 color: black;
 }
 
-/* MENU */
-.menu {
+/* SECTION WRAPPER */
+.section {
+max-width: 1100px;
+margin: auto;
 padding: 80px 20px;
 }
 
-.menu h2 {
-text-align: center;
-margin-bottom: 30px;
-color: #ff2e2e;
+/* MENU CARDS */
+.menu-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 25px;
 }
 
-.menu-section {
-max-width: 700px;
-margin: 0 auto 30px;
+.card {
+background: #1a1a1a;
+padding: 20px;
+border-radius: 12px;
 }
 
-.menu-section h3 {
+.card h3 {
 margin-bottom: 10px;
+color: #ff2e2e;
 }
 
 .menu-item {
 display: flex;
 justify-content: space-between;
-padding: 10px 0;
+padding: 6px 0;
 border-bottom: 1px solid #333;
 }
 
 /* HOURS */
 .hours {
 text-align: center;
-padding: 40px 20px;
 background: #1a1a1a;
-margin: 40px auto;
-max-width: 600px;
-border-radius: 10px;
+padding: 40px;
+border-radius: 12px;
+margin-top: 40px;
 }
 
 /* GALLERY */
-.gallery {
-padding: 60px 20px;
-text-align: center;
-}
-
-.gallery h2 {
-color: #ff2e2e;
-margin-bottom: 20px;
-}
-
 .gallery-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 gap: 20px;
-max-width: 1000px;
-margin: auto;
+margin-top: 30px;
 }
 
-.gallery img {
+.gallery-grid img {
 width: 100%;
-border-radius: 10px;
+border-radius: 12px;
 }
 
 /* FOOTER */
 footer {
 text-align: center;
-padding: 20px;
+padding: 30px;
 background: black;
+margin-top: 50px;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
 .hero h1 {
-font-size: 2.2rem;
+font-size: 2.5rem;
+}
+nav {
+padding: 15px 20px;
 }
 }
 </style>
@@ -193,67 +183,57 @@ font-size: 2.2rem;
 </section>
 
 <!-- MENU -->
-<section class="menu" id="menu">
-<h2>Menu</h2>
+<section class="section" id="menu">
+<h2 style="text-align:center; color:#ff2e2e; margin-bottom:40px;">Menu</h2>
 
-<div class="menu-section">
+<div class="menu-grid">
+
+<div class="card">
 <h3>Chimis</h3>
-<div class="menu-item">Chicken / Pollo <span>$12</span></div>
-<div class="menu-item">Pork / Pernil <span>$13</span></div>
-<div class="menu-item">Beef / Res <span>$12</span></div>
+<div class="menu-item">Chicken <span>$12</span></div>
+<div class="menu-item">Pork <span>$13</span></div>
+<div class="menu-item">Beef <span>$12</span></div>
 </div>
 
-<div class="menu-section">
+<div class="card">
 <h3>Sandwiches</h3>
 <div class="menu-item">Crispy Chicken <span>$13</span></div>
 <div class="menu-item">Grilled Chicken <span>$14</span></div>
 <div class="menu-item">Cuban <span>$15</span></div>
-<div class="menu-item">Knight Burger <span>$14</span></div>
 </div>
 
-<div class="menu-section">
+<div class="card">
 <h3>Entrees</h3>
-<div class="menu-item">Fried Carnitas w/ Tostones <span>$16</span></div>
-<div class="menu-item">Pernil w/ Rice & Beans <span>$15</span></div>
+<div class="menu-item">Carnitas + Tostones <span>$16</span></div>
+<div class="menu-item">Pernil + Rice <span>$15</span></div>
 </div>
 
-<div class="menu-section">
+<div class="card">
 <h3>Extras</h3>
 <div class="menu-item">Empanadas <span>$3</span></div>
-<div class="menu-item">Yaroa / Loaded Fries <span>$12</span></div>
+<div class="menu-item">Yaroa <span>$12</span></div>
 </div>
 
-<div class="menu-section">
-<h3>Sides</h3>
-<div class="menu-item">Tostones <span>$5</span></div>
-<div class="menu-item">Fries <span>$4</span></div>
 </div>
 
-<div class="menu-section">
-<h3>Drinks</h3>
-<div class="menu-item">Water <span>$2</span></div>
-<div class="menu-item">Soda Can <span>$2.25</span></div>
-</div>
-</section>
-
-<!-- HOURS -->
-<section class="hours">
+<div class="hours">
 <h2 style="color:#ff2e2e;">Hours</h2>
 <p>Tuesday – Saturday</p>
 <p>12:00 PM – 8:00 PM</p>
 <p>Closed Sunday & Monday</p>
+</div>
+
 </section>
 
 <!-- GALLERY -->
-<section class="gallery" id="gallery">
-<h2>Our Food</h2>
+<section class="section" id="gallery">
+<h2 style="text-align:center; color:#ff2e2e;">Our Food</h2>
 
 <div class="gallery-grid">
 <img src="https://images.unsplash.com/photo-1604908176997-43197c7f94d3">
 <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
 <img src="https://images.unsplash.com/photo-1605475128023-5f5e2f5b7c9d">
 </div>
-
 </section>
 
 <!-- FOOTER -->
