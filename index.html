@@ -3,151 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Liljsfogon</title>
+<title>Little J’s Food Truck</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Montserrat', sans-serif;
+scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0f0f0f;
-    color: white;
+background: #0f0f0f;
+color: #fff;
 }
 
-/* NAVBAR */
+/* NAVBAR /
 nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background: black;
+position: fixed;
+width: 100%;
+top: 0;
+background: rgba(0,0,0,0.7);
+backdrop-filter: blur(10px);
+display: flex;
+justify-content: space-between;
+padding: 15px 30px;
+z-index: 1000;
 }
 
-nav h1 {
-    color: #ff4d4d;
+nav h2 {
+color: #ff2e2e;
 }
 
 nav a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
+color: white;
+margin-left: 15px;
+text-decoration: none;
+font-weight: 600;
 }
 
-/* HERO */
+/ HERO /
 .hero {
-    height: 90vh;
-    background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+height: 100vh;
+background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
 }
 
-.hero h2 {
-    font-size: 50px;
-    background: rgba(0,0,0,0.6);
-    padding: 20px;
-    border-radius: 10px;
+.hero h1 {
+font-size: 3rem;
+color: #ff2e2e;
 }
 
-/* SECTIONS */
-section {
-    padding: 60px 20px;
-    text-align: center;
+.hero p {
+margin: 10px 0;
 }
 
-h2 {
-    color: #ff4d4d;
+.btn {
+padding: 12px 20px;
+margin: 10px;
+border-radius: 25px;
+text-decoration: none;
+font-weight: bold;
 }
 
-/* MENU */
+.btn-red {
+background: #ff2e2e;
+color: white;
+}
+
+.btn-white {
+background: white;
+color: black;
+}
+
+/ MENU /
 .menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+padding: 80px 20px;
+}
+
+.menu h2 {
+text-align: center;
+margin-bottom: 30px;
+color: #ff2e2e;
+}
+
+.menu-section {
+max-width: 600px;
+margin: auto;
+margin-bottom: 30px;
+}
+
+.menu-section h3 {
+margin-bottom: 10px;
 }
 
 .menu-item {
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
+display: flex;
+justify-content: space-between;
+padding: 8px 0;
+border-bottom: 1px solid #333;
 }
 
-/* BUTTONS */
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #ff4d4d;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: 0.3s;
+/ GALLERY /
+.gallery {
+padding: 40px 20px;
+text-align: center;
 }
 
-.btn:hover {
-    background: #ff1a1a;
-    transform: scale(1.05);
+.gallery h2 {
+color: #ff2e2e;
+margin-bottom: 20px;
 }
 
-/* FOOTER */
+.gallery img {
+width: 100%;
+max-width: 300px;
+margin: 10px;
+border-radius: 10px;
+}
+
+/ FOOTER /
 footer {
-    background: black;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
+text-align: center;
+padding: 20px;
+background: black;
+}
+
+/ MOBILE */
+@media (max-width: 600px) {
+.hero h1 {
+font-size: 2rem;
+}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
-    <h1>Liljsfogon 🔥</h1>
-    <div>
-        <a href="#menu">Menu</a>
-        <a href="#order">Order</a>
-        <a href="#social">Instagram</a>
-    </div>
+<h2>Little J’s</h2>
+<div>
+<a href="#menu">Menu</a>
+<a href="#gallery">Food</a>
+</div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-    <h2>Bold Flavor. Street Fire. 🔥</h2>
-</div>
+<section class="hero">
+<h1>Dominican Street Food</h1>
+<p>Fresh. Flavorful. Authentic.</p>
 
-<!-- ABOUT -->
-<section>
-    <h2>About Us</h2>
-    <p>Serving up hot, fresh, and flavorful street food that hits every time. Catch us around the city!</p>
+<div>
+<a href="https://www.doordash.com" class="btn btn-red" target="_blank">Order Now</a>
+<a href="https://www.instagram.com/littlejsfogon?igsh=MWttcGR5cnBmYnpseg==m" class="btn btn-white" target="_blank">Instagram</a>
+</div>
 </section>
 
 <!-- MENU -->
-<section id="menu">
-    <h2>Menu</h2>
-    <div class="menu">
-        <div class="menu-item">🌮 Tacos - $3</div>
-        <div class="menu-item">🍔 Burger - $8</div>
-        <div class="menu-item">🍟 Loaded Fries - $6</div>
-        <div class="menu-item">🌯 Burrito - $9</div>
-    </div>
+<section class="menu" id="menu">
+<h2>Menu</h2>
+
+<div class="menu-section">
+<h3>Chimis</h3>
+<div class="menu-item">Chicken / Pollo <span>$12</span></div>
+<div class="menu-item">Pork / Pernil <span>$13</span></div>
+<div class="menu-item">Beef / Res <span>$12</span></div>
+</div>
+
+<div class="menu-section">
+<h3>Sandwiches</h3>
+<div class="menu-item">Crispy Chicken <span>$13</span></div>
+<div class="menu-item">Grilled Chicken <span>$14</span></div>
+<div class="menu-item">Cuban <span>$15</span></div>
+<div class="menu-item">Knight Burger <span>$14</span></div>
+</div>
+
+<div class="menu-section">
+<h3>Entrees</h3>
+<div class="menu-item">Fried Carnitas w/ Tostones <span>$16</span></div>
+<div class="menu-item">Pernil w/ Rice & Beans <span>$15</span></div>
+</div>
+
+<div class="menu-section">
+<h3>Extras</h3>
+<div class="menu-item">Empanadas <span>$3</span></div>
+<div class="menu-item">Yaroa / Loaded Fries <span>$12</span></div>
+</div>
+
+<div class="menu-section">
+<h3>Sides</h3>
+<div class="menu-item">Tostones <span>$5</span></div>
+<div class="menu-item">Fries <span>$4</span></div>
+</div>
+
+<div class="menu-section">
+<h3>Drinks</h3>
+<div class="menu-item">Water <span>$2</span></div>
+<div class="menu-item">Soda Can <span>$2.25</span></div>
+</div>
 </section>
 
-<!-- ORDER -->
-<section id="order">
-    <h2>Order Now</h2>
-    <a class="btn" href="#" target="_blank">Order on DoorDash</a>
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+<h2>Our Food</h2>
+<img src="https://images.unsplash.com/photo-1604908176997-43197c7f94d3">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+<img src="https://images.unsplash.com/photo-1605475128023-5f5e2f5b7c9d">
 </section>
 
-<!-- INSTAGRAM -->
-<section id="social">
-    <h2>Follow Us</h2>
-    <a class="btn" href="#" target="_blank">View Instagram</a>
-</section>
-
+<!-- FOOTER -->
 <footer>
-    © 2026 Liljsfogon Food Truck
+<p>© 2026 Little J’s Food Truck</p>
 </footer>
 
 </body>
